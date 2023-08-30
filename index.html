@@ -11,7 +11,7 @@
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
         <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="D:\tsukido\tsukido\tsukido\style.css">
+        <link rel="stylesheet" href="style.css">
 
         <title>Responsive sushi website - Bedimcode</title>
     </head>
@@ -37,6 +37,9 @@
                         </li>
                         <li class="nav__item">
                             <a href="#recently" class="nav__link">Recently</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#newsletterplace" class="nav__link1">Subscribe</a>
                         </li>
                     </ul>
 
@@ -76,10 +79,10 @@
                         </h1>
 
                         <p class="home__description">
-                            Enjoy a good dinner with the best dishes in the restaurant and improve your day.
+                            Enjoy a good meal with the best dishes in the restaurant and improve your day.
                         </p>
 
-                        <a href="#" class="button">
+                        <a href="https://wa.link/7qvk9c" class="button">
                             Contact Now <i class="ri-arrow-right-line"></i>
                         </a>
                     </div>
@@ -131,10 +134,11 @@
                         <span class="popular__description">Japanese Dish</span>
                     
                         <span class="popular__price">RM13.90</span>
-                    
+                        <a href="https://wa.link/7qvk9c">
                         <button class="popular__button">
                             <i class="ri-shopping-bag-line"></i>
                         </button>
+                        </a>
                     </article>
 
                     <article class="popular__card">
@@ -144,10 +148,11 @@
                         <span class="popular__description">Japanese Dish</span>
                     
                         <span class="popular__price">RM13.90</span>
-                    
+                        <a href="https://wa.link/7qvk9c">
                         <button class="popular__button">
                             <i class="ri-shopping-bag-line"></i>
                         </button>
+                        </a>
                     </article>
 
                     <article class="popular__card">
@@ -157,10 +162,11 @@
                         <span class="popular__description">Japanese Dish</span>
                     
                         <span class="popular__price">14.90</span>
-                    
+                        <a href="https://wa.link/7qvk9c">
                         <button class="popular__button">
                             <i class="ri-shopping-bag-line"></i>
                         </button>
+                        </a>
                     </article>
                 </div>
             </section>
@@ -170,17 +176,17 @@
                 <div class="recently__container container grid">
                     <div class="recently__data">
                         <span class="section__subtitle">Recently Added</span>
-                        <h2 class="section__title">
-                            Sushi Samurai <br>
-                            Salmon Cheese
+                        <h2 class="section__title" id="recentlyTitle">
+                            Super Spicy
+                            Karaage Rice
                         </h2>
 
-                        <p class="recently__description">
+                        <p class="recently__description" id="recentlyDescription">
                             Take a look at what's new. And do not deprive
                             yourself of a good meal, enjoy and be happy.
                         </p>
 
-                        <a href="#" class="button">
+                        <a href="https://wa.link/7qvk9c" class="button">
                             Order Now <i class="ri-arrow-right-line"></i>
                         </a>
 
@@ -195,7 +201,7 @@
             </section>
 
             <!--==================== NEWSLETTER ====================-->
-            <section class="newsletter section">
+            <section class="newsletter section" id="newsletterplace">
                 <div class="newsletter__container container">
                     <div class="newsletter__content grid">
                         <img src="assets/img/about-sushi.png" alt="newsletter image" class="newsletter__img">
@@ -208,7 +214,7 @@
                             </h2>
 
                             <form action="" class="newsletter__form">
-                                <input type="email" placeholder="Enter email" class="newsletter__input">
+                                <input placeholder="Press Subcribe Button." class="newsletter__input">
 
                                 <button class="button newsletter__button" id="show-subscribe">
                                     Subcribe <i class="ri-send-plane-line"></i>
@@ -249,7 +255,7 @@
                             </li>
 
                             <li>
-                                <a href="" class="footer__link">Menus</a>
+                                <a href="assets/tsukidomenu.pdf" class="footer__link">Menus</a>
                             </li>
 
                             <li>
@@ -263,15 +269,11 @@
 
                         <ul class="footer__links">
                             <li>
-                                <a href="" class="footer__link">Information</a>
-                            </li>
-
-                            <li>
-                                <a href="" class="footer__link">Contact</a>
+                                <a href="https://wa.link/7qvk9c" class="footer__link">Contact</a>
                             </li>
                             
                             <li>
-                                <a href="" class="footer__link">Reservation</a>
+                                <a href="https://wa.link/7qvk9c" class="footer__link">Order</a>
                             </li>
                         </ul>
                     </div>
@@ -285,9 +287,19 @@
                                 1 Taman Danau Kota, <br>
                                 53100 Kuala Lumpur.
                             </li>
+                            
+                            <li>
+                            <a href="https://maps.app.goo.gl/Da9AQ3qSUymH7H6t7?g_st=ic" target="_blank" class="footer__social-link">
+                                <i><img src="assets/img/Google.png" class="map__img"></i>
+                            </a>
 
+                            <a href="https://waze.com/ul/hw2864wuez" target="_blank" class="footer__social-link">
+                                <i><img src="assets/img/waze.png" class="map__img"></i>
+                            </a>
+                            </li>
+                            
                             <li class="footer__information">
-                                10AM - 10PM
+                                11AM - 10PM
                             </li>
                         </ul>
                     </div>
@@ -333,42 +345,44 @@
         <a href="#" class="scrollup" id="scroll-up">
             <i class="ri-arrow-up-line"></i>
         </a>
-        <div class="popup">
+        <div class="popup" id="fillin">
             <div class="close-btn">&times;</div>
             <div class="form">
                 <h2>Subcribe</h2>
-                <div class="form-element">
-                    <label for="name" class="label-font">Name</label>
-                    <input type="text" id="name" placeholder="Enter Name">
-                </div>
-                <div class="form-element">
-                    <label for="email" class="label-font">Email</label>
-                    <input type="text" id="email" placeholder="Enter Email">
-                </div>
-                <div class="form-element">
-                    <label for="phone" class="label-font">Phone Number</label>
-                    <input type="text" id="phone" placeholder="Enter Phone Number">
-                </div>
-                <div class="form-element">
-                    <label class="label-font">Gender</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="male" name="gender">
-                            <label for="male" class="label-font">Male</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="female" name="gender">
-                            <label for="female" class="label-font">Female</label>
+                <form method="post" action="\">
+                    <div class="form-element">
+                        <label for="name" class="label-font">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter Name">
+                    </div>
+                    <div class="form-element">
+                        <label for="email" class="label-font">Email</label>
+                        <input type="text" id="email" name="email" placeholder="Enter Email">
+                    </div>
+                    <div class="form-element">
+                        <label for="phone" class="label-font">Phone Number</label>
+                        <input type="text" id="phone" name="phone" placeholder="Enter Phone Number">
+                    </div>
+                    <div class="form-element">
+                        <label class="label-font">Gender</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="male" name="gender" value="Male">
+                                <label for="male" class="label-font">Male</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="female" name="gender" value="Female">
+                                <label for="female" class="label-font">Female</label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="form-element">
-                    <label for="dob" class="label-font">Date of Birth </label>
-                    <input type="date" id="dob">
-                </div>
-                <div class="form-element">
-                    <button>Subscribe</button>
-                </div>
+                    <div class="form-element">
+                        <label for="dob" class="label-font">Date of Birth </label>
+                        <input type="date" id="dob" name="dob">
+                    </div>
+                    <div class="form-element">
+                        <button>Subscribe</button>
+                    </div>
+                </form>
             </div>
         </div>
 
@@ -376,6 +390,6 @@
         <script src="scrollreveal.min.js"></script>
 
         <!--=============== MAIN JS ===============-->
-        <script src="D:\tsukido\tsukido\tsukido\main.js"></script>
+        <script src="main.js"></script>
     </body>
 </html>

@@ -107,86 +107,44 @@ document.querySelector(".popup .close-btn").addEventListener("click",function(){
     document.querySelector(".popup").classList.remove("active");
 });
 
-document.querySelector(".popup .form button").addEventListener("click", function() {
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var phone = document.getElementById("phone").value;
-    var genderInputMale = document.getElementById("male");
-    var genderInputFemale = document.getElementById("female");
-    var gender = "";
-    var dob = document.getElementById("dob").value;
-
-    if (genderInputMale.checked) {
-        gender = "Male";
-    } else if (genderInputFemale.checked) {
-        gender = "Female";
-    }
-    
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    var phonePattern = /^(01\d{8,10})$/;
-    
-    if (!name || !email || !phone || !gender || !dob) {
-        alert("Please fill in all fields before subscribing.");
-        return;
-    } else if (!emailPattern.test(email)) {
-        alert("Please enter a valid email address.");
-        return;
-    } else if (!phonePattern.test(phone)) {
-        alert("Please enter a valid phone number.");
-        return;
-    } else {
-        var url = "http://localhost:8000/subscribe"; // Replace with your server's URL
-        
-        var formData = new FormData();
-        formData.append("name", name);
-        formData.append("email", email);
-        formData.append("phone", phone);
-        formData.append("gender", gender);
-        formData.append("dob", dob);
-        
-        fetch(url, {
-            method: "POST",
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert("Subscription successful. Have a nice day!");
-            } else {
-                alert("An error occurred: " + data.message);
-            }
-        })
-        .catch(error => {
-            console.error(error);
-            alert("An error occurred. Please try again later.");
-        });
-    }
-});
+const slideshowData = [
+    {
+      title: "Super Spicy Karaage Rice",
+      description: "Take a look at what's new. And do not deprive yourself of a good meal, enjoy and be happy.",
+      image: "assets/img/recently-add.png"
+    },
+    {
+      title: "Delicious Set Lunch",
+      description: "Indulge in our delightful set lunch, carefully crafted with a variety of flavors to satisfy your palate.",
+      image: "assets/img/Set-Lunch.png"
+    },
+    {
+        title: "Tempting Snack Time",
+        description: "Elevate your snack time with our exquisite snacks, perfect for a quick and delicious pick-me-up.",
+        image: "assets/img/Snack-Time.png"
+      },
+    // Add more slide data objects as needed
+  ];
+  
+  let currentSlideIndex = 0;
+  
+  function changeSlide() {
+    const recentlyTitle = document.getElementById("recentlyTitle");
+    const recentlyDescription = document.getElementById("recentlyDescription");
+    const recentlyDataImg = document.querySelector(".recently__img");
+  
+    recentlyTitle.textContent = slideshowData[currentSlideIndex].title;
+    recentlyDescription.textContent = slideshowData[currentSlideIndex].description;
+    recentlyDataImg.src = slideshowData[currentSlideIndex].image;
+  
+    currentSlideIndex = (currentSlideIndex + 1) % slideshowData.length;
+  }
+  
+  // Change slide every 5 seconds (5000 milliseconds)
+  setInterval(changeSlide, 5000);
+  
 
 
-// document.querySelector(".popup .form button").addEventListener("click", function() {
-//     var name = document.getElementById("name").value;
-//     var email = document.getElementById("email").value;
-//     var phone = document.getElementById("phone").value;
-//     var gender = document.querySelector("input[name='gender']:checked").value;
-    
-//     var url = "https://script.google.com/macros/s/AKfycbwLf0YjfWFFCjxhraSYoRA96BHOqWZ51wT-79SK68j8c_Vma16flLqexviCzEpuI9HA/exec"; // Replace with your Apps Script URL
-    
-//     var formData = new FormData();
-//     formData.append("name", name);
-//     formData.append("email", email);
-//     formData.append("phone", phone);
-//     formData.append("gender", gender);
-    
-//     fetch(url, {
-//       method: "POST",
-//       body: formData
-//     }).then(response => {
-//       // Handle response here
-//     }).catch(error => {
-//       // Handle error here
-//     });
-//   });
 
 
   
